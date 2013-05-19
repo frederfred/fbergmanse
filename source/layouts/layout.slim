@@ -1,0 +1,61 @@
+doctype html
+html.no-js lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    meta name="description" content="The digital home of web developer Fred Bergman"
+    title Fred Bergman › web developer
+    link rel="stylesheet" href==asset_path(:css, "main")
+  body
+
+    header
+      h1 Fred Bergman
+      pre
+        ==nl
+        |
+          #####                     ######                                       !
+          #     #####  #### #####   #    #   #### #####  ##### ####### ##### #####
+          ##### #   #  #    #   #   ######## #    #   #  #   # #  #  # #   # #   #
+          ##    ###### #### ##  #   ##     # #### ###### ##    ## #  # ##### ##  #
+          ##    ##   # ##   ##  #   ##     # ##   ##   # ## ## ## #  # ##  # ##  #
+          ##    ##   # #### #####   ######## #### ##   # ##### ## #  # ##  # ##  #
+        ==nl
+
+    div role="main"
+      ==yield
+
+    footer
+      h2 Elsewhere
+      ul
+        li
+          a href="http://github.com/frederfred" target="_blank" GitHub
+        li
+          a href="http://twitter.com/frederfred" target="_blank" Twitter
+        li
+          a href="http://pinboard.in/u:frederfred" target="_blank" Pinboard
+        li
+          a href="http://linkedin.com/in/fredbergman" target="_blank" LinkedIn
+
+      h2 Contact
+      abbr title="Mail" m:
+      a href="mailto:fred@fbergman.se" fred@fbergman.se
+      br
+      ==nl
+      abbr title="Phone" p:
+      a href="tel:+46703555322" +46 (0)70 355 53 22
+      br
+      ==nl
+      abbr title="Skype" s:
+      a href="skype:fredfrederf?call" fredfrederf
+      br
+      ==nl
+      abbr title="Location" l:
+      a href="https://maps.google.com/maps?q=Stockholm,+Sweden&hnear=Stockholm,+Sweden&t=m&z=11" target="_blank" Stockholm, Sweden
+
+    script src==asset_path(:js, "main")
+    - if build?
+      javascript:
+        var _gaq=[['_setAccount','UA-7541522-1'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
