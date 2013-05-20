@@ -11,10 +11,7 @@
     this.interval = null;
 
     this.rainbow();
-
-    if (this.el.addEventListener) {
-      this.eventListeners();
-    }
+    this.eventListeners();
 
   }
 
@@ -31,15 +28,15 @@
 
     var self = this;
 
-    this.el.addEventListener('mousemove', function(e) {
+    this.addEvent('mousemove', this.el, function() {
       if (!self.isLooping) {
         self.loop();
       }
-    }, false);
+    });
 
-    this.el.addEventListener('mouseout', function(e) {
+    this.addEvent('mouseout', this.el, function() {
       self.stopLoop();
-    }, false);
+    });
 
   };
 
@@ -113,6 +110,15 @@
 
     return color;
   };
+
+  Logo.prototype.addEvent = function(event, elem, func) {
+    if (elem.addEventListener) {
+      elem.addEventListener(event, func, false);
+    } else if (elem.attachEvent) {
+      elem.attachEvent('on' + event, func);
+    }
+  };
+
 
   window.Logo = Logo;
 
