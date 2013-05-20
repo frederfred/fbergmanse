@@ -74,7 +74,6 @@
 
       var el = this.whiteSpace[i];
       var hue = (rainbowAt + i) % 360;
-      var hsl = 'hsl(' + hue + ',100%, 50%)';
 
       el.style.backgroundColor = this.getHexFromHue(hue);
 
