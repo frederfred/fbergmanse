@@ -1,9 +1,9 @@
-(function(win, doc) {
+(function(win) {
 
   'use strict';
 
-  function Logo() {
-    this.el = doc.getElementsByTagName('pre')[0];
+  function Logo(el) {
+    this.el = el;
     this.wrapHashes();
     this.whiteSpace = this.el.getElementsByTagName('i');
     this.rainbowAt = this.getRandomInt(0, 360);
@@ -119,4 +119,4 @@
 
   window.Logo = Logo;
 
-})(window, document);
+})(window);
