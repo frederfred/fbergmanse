@@ -109,11 +109,11 @@
     return color;
   };
 
-  Logo.prototype.addEvent = function(event, elem, func) {
-    if (elem.addEventListener) {
-      elem.addEventListener(event, func, false);
-    } else if (elem.attachEvent) {
-      elem.attachEvent('on' + event, func);
+  Logo.prototype.addEvent = function(event, el, func) {
+    if (el.addEventListener) {
+      el.addEventListener(event, func, false);
+    } else if (el.attachEvent) {
+      el.attachEvent('on' + event, func);
     }
   };
 
