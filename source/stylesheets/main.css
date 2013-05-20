@@ -17,6 +17,11 @@ pre {
   white-space: pre;
 }
 
+pre a,
+pre a:hover {
+  color: #fff;
+}
+
 .no-js pre {
   color: #333;
 }
