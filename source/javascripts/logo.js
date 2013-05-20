@@ -16,12 +16,10 @@
   }
 
   Logo.prototype.wrapHashes = function() {
-
     var originalHTML = this.el.innerHTML;
     var wrappedHTML = originalHTML.replace(/#/g, '<i> </i>');
 
-    this.el.outerHTML = '<pre>' + wrappedHTML + '</pre>';
-    this.el = doc.getElementsByTagName('pre')[0];
+    this.el.innerHTML = '<a href="/">' + wrappedHTML + '</a>';
   };
 
   Logo.prototype.eventListeners = function() {
