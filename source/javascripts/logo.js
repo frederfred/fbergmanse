@@ -56,6 +56,7 @@
 
     cancelAnimationFrame(this.interval);
     this.isLooping = false;
+    this.interval = null;
 
   };
 
