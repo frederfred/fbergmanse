@@ -57,7 +57,6 @@ html {
 body,
 h2 {
   font-size: 1em;
-  font-family: "Courier New", monospace;
   line-height: 1.5;
   text-transform: lowercase;
   font-weight: normal;
@@ -69,6 +68,8 @@ body {
 
   margin: 0 auto;
   padding: 1.5em 1em;
+
+  font-family: "Inconsolata", "Courier New", monospace;
 }
 
 h2 {
