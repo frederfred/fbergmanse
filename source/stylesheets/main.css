@@ -7,12 +7,12 @@ main {
 }
 
 pre {
-  margin: 0 0 1em;
+  margin: 0 0 2em;
   overflow: hidden;
   color: #fff;
-  font-family: "Courier New", monospace;
-  font-size: .875em;
-  line-height: 1.2;
+  font-family: "Inconsolata", "Courier New", monospace;
+  font-size: .75em;
+  line-height: 1;
   text-align: center;
   white-space: pre;
 }
@@ -114,20 +114,17 @@ li:before {
   content: "* ";
 }
 
-@media (max-width: 750px) {
-  pre {
-    font-size: .75em;
-  }
-}
 
 @media (max-width: 550px) {
   pre {
-    font-size: .5em;
+    font-size: .5em; /* 8/16 */
+    margin: 0 0 3em; /* 24/8 */
   }
 }
 
 @media (max-width: 400px) {
   pre {
-    font-size: .4em;
+    font-size: .25em; /* 4/16 */
+    margin: 0 0 6em; /* 24/4 */
   }
 }
