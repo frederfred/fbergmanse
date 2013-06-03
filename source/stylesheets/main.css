@@ -138,7 +138,7 @@ small {
 
 @media (max-width: 400px) {
   pre {
-    font-size: .25em; /* 4/16 */
-    margin: 0 0 6em; /* 24/4 */
+    font-size: .4375em; /* 7/16 */
+    margin: 0 0 3em; /* 21/7 */
   }
 }
