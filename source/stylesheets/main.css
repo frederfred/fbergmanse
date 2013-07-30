@@ -15,6 +15,7 @@ pre {
   line-height: 1.15;
   text-align: center;
   white-space: pre;
+  cursor: default;
 }
 
 pre a,

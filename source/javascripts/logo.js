@@ -19,7 +19,7 @@
     var originalHTML = this.el.innerHTML;
     var wrappedHTML = originalHTML.replace(/#/g, '<i> </i>');
 
-    this.el.innerHTML = '<a href="/">' + wrappedHTML + '</a>';
+    this.el.innerHTML = '<span>' + wrappedHTML + '</span>';
   };
 
   Logo.prototype.eventListeners = function() {
