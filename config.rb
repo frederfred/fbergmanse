@@ -1,5 +1,3 @@
-Slim::Engine.set_default_options pretty: true
-
 helpers do
   def nl
     "\n"
