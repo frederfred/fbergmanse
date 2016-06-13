@@ -1,0 +1,15 @@
+@import "../config/wrapper";
+
+//
+// Component: Wrapper
+// =============================================================================
+$component-name: "Wrapper";
+$component-base: ".#{$component-name}";
+
+#{$component-base} {
+  max-width: calc(#{$wrapper-max-width} + #{$wrapper-padding-horizontal * 2});
+
+  padding: $wrapper-padding-vertical $wrapper-padding-horizontal;
+
+  margin: auto;
+}

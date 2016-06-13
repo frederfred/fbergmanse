@@ -1,2 +1,1 @@
-My personal website [fbergman.se](http://fbergman.se).
-I ain't got nothing to hide...
+[fbergman.se](http://fbergman.se)

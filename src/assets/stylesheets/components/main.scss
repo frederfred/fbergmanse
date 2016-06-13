@@ -1,0 +1,13 @@
+//
+// Component: Main
+// =============================================================================
+$component-name: "Main";
+$component-base: ".#{$component-name}";
+
+#{$component-base} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}

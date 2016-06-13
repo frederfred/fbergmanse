@@ -1,0 +1,54 @@
+@import "../config/typography";
+
+@import "repetitivo/patterns/list";
+
+//
+// Component: Inline List
+// =============================================================================
+$component-name: "InlineList";
+$component-base: ".#{$component-name}";
+
+#{$component-base} {
+  margin-bottom: $paragraph-margin;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Element: Headline
+  // ---------------------------------------------------------------------------
+  &-headline {
+    display: inline-block;
+    margin: 0;
+
+    &::after {
+      content: ": ";
+    }
+  }
+
+  // Element: List
+  // ---------------------------------------------------------------------------
+  &-list {
+    @include list-reset;
+
+    display: inline;
+  }
+
+  // Element: List Item
+  // ---------------------------------------------------------------------------
+  &-item {
+    display: inline;
+
+    white-space: nowrap;
+
+    &::after {
+      content: ", ";
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

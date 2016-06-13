@@ -1,0 +1,54 @@
+{
+  "name": "fbergmanse",
+  "version": "0.0.1",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "autoprefixer": "postcss --use autoprefixer -o build/assets/stylesheets/application.css build/assets/stylesheets/application.raw.css && rm build/assets/stylesheets/application.raw.css",
+    "build": "npm run build:html && npm run build:js && npm run build:css && npm run build:favicon",
+    "build:css": "npm run compile:scss && npm run build:post:css",
+    "build:html": "mkdir -p build && cp -r src/*.html build/",
+    "build:favicon": "rm -f build/favicon.ico && cp favicon.ico build/favicon.ico",
+    "build:js": "mkdir -p build/assets/javascripts && browserify src/assets/javascripts/application.js -t babelify --outfile build/assets/javascripts/application.js && echo 'done'",
+    "build:post:css": "npm run autoprefixer",
+    "compile:scss": "node-sass src/assets/stylesheets/application.scss build/assets/stylesheets/application.raw.css --include-path node_modules/repetitivo/lib",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint src/assets/javascripts",
+    "serve": "npm run build && npm run server",
+    "server": "http-server ./build",
+    "start": "npm run build && parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:html' 'npm run watch:js'",
+    "test": "npm run lint",
+    "watch:css": "sane 'npm run build:css'  --glob='src/**/*.scss'",
+    "watch:html": "sane 'npm run build:html' --glob='src/**/*.html'",
+    "watch:js": "sane 'npm run build:js' --glob='src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederfred/fbergmanse.git"
+  },
+  "author": "Fred Bergman <fred@fbergman.se> (http://fbergman.se)",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/frederfred/fbergmanse/issues"
+  },
+  "homepage": "https://github.com/frederfred/fbergmanse#readme",
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "babelify": "^7.2.0",
+    "element-closest": "^2.0.1",
+    "http-server": "^0.9.0",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1",
+    "repetitivo": "git://github.com/Oktavilla/repetitivo.git#8290dd1092450b9ab4ba34be273b8bfd4e2667a6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.11.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-react": "^5.1.1",
+    "parallelshell": "^2.0.0",
+    "sane": "^1.3.1"
+  }
+}

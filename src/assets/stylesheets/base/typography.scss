@@ -1,0 +1,43 @@
+@import "repetitivo/helpers/styles-from-map";
+
+@import "../config/typography";
+
+html {
+  @include styles-from-map((font-size: $base-font-sizes));
+
+  font-family: $base-font-family;
+  line-height: $base-font-line-height;
+  color: $base-font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  @include styles-from-map((box-shadow: $link-box-shadow));
+
+  color: $link-color;
+  text-decoration: none;
+
+  background: transparent;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &:hover {
+    @include styles-from-map((box-shadow: $link-box-shadow-hover));
+  }
+}
+
+h1,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin;
+}
+
+h1,
+h2 {
+  font: inherit;
+}
