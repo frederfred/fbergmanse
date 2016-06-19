@@ -7,13 +7,12 @@
     "autoprefixer": "postcss --use autoprefixer -o build/assets/stylesheets/application.css build/assets/stylesheets/application.raw.css && rm build/assets/stylesheets/application.raw.css",
     "build": "npm run build:html && npm run build:js && npm run build:css && npm run build:favicon",
     "build:css": "npm run compile:scss && npm run build:post:css",
-    "build:html": "mkdir -p build && cp -r src/index.html build/",
+    "build:html": "mkdir -p build && pug < src/index.pug > build/index.html --pretty --basedir src",
     "build:favicon": "rm -f build/favicon.ico && cp favicon.ico build/favicon.ico",
     "build:js": "mkdir -p build/assets/javascripts && browserify src/assets/javascripts/application.js -t babelify --outfile build/assets/javascripts/application.js && echo 'done'",
     "build:post:css": "npm run autoprefixer",
-    "build:source-comment": "cat src/source-comment.html build/index.html > build/tmp && mv build/tmp build/index.html",
     "compile:scss": "node-sass src/assets/stylesheets/application.scss build/assets/stylesheets/application.raw.css --include-path node_modules/repetitivo/lib",
-    "build:compressed": "npm run build && npm run build:inliner && npm run build:html-minifier && npm run build:source-comment",
+    "build:compressed": "npm run build && npm run build:inliner && npm run build:html-minifier",
     "build:inliner": "npm run build && inliner build/index.html --skip-absolute-urls > build/tmp && node tasks/fix-inliner-filter.js && mv build/tmp build/index.html",
     "build:html-minifier": "html-minifier build/index.html --collapse-whitespace --minify-css --minify-js > build/tmp && mv build/tmp build/index.html",
     "lint": "npm run lint:js",
@@ -23,7 +22,7 @@
     "start": "npm run build && parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:html' 'npm run watch:js'",
     "test": "npm run lint",
     "watch:css": "sane 'npm run build:css'  --glob='src/**/*.scss'",
-    "watch:html": "sane 'npm run build:html' --glob='src/**/*.html'",
+    "watch:html": "sane 'npm run build:html' --glob='src/**/*.pug'",
     "watch:js": "sane 'npm run build:js' --glob='src/**/*.js'"
   },
   "repository": {
@@ -46,6 +45,8 @@
     "inliner": "^1.9.2",
     "node-sass": "^3.4.2",
     "postcss-cli": "^2.5.1",
+    "pug": "^2.0.0-beta3",
+    "pug-cli": "^1.0.0-alpha6",
     "repetitivo": "git://github.com/Oktavilla/repetitivo.git#8290dd1092450b9ab4ba34be273b8bfd4e2667a6"
   },
   "devDependencies": {

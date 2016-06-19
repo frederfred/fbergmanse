@@ -1,0 +1,20 @@
+doctype html
+
+include /includes/source-comment.html
+
+html
+  head
+    meta(charset="utf-8")
+    meta(name="description", content="Freelancing web developer that make websites and web apps")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+
+    block title
+
+    link(href="https://fonts.googleapis.com/css?family=Inconsolata", rel="stylesheet")
+    link(href="./assets/stylesheets/application.css", rel="stylesheet")
+  body
+    main.Main
+      .Wrapper
+        .Glitch.js-glitch
+          block content
+    script(src="./assets/javascripts/application.js")
