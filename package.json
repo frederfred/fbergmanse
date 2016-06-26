@@ -1,6 +1,6 @@
 {
   "name": "fbergmanse",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Personal website",
   "main": "index.js",
   "scripts": {
