@@ -3,8 +3,8 @@ import 'element-closest';
 module.exports = (parentSelector, eventName, selector, fn) => {
   const parentEl = document.querySelector(parentSelector);
 
-  parentEl.addEventListener(eventName, event => {
-    const target = event.target;
+  parentEl.addEventListener(eventName, (event) => {
+    const { target } = event;
 
     let el;
 

@@ -1,6 +1,6 @@
 import on from './utils/on';
 import randomNumber from './utils/random-number';
-import getHexFromHue from './utils/get-hex-from-hue';
+import getRGBFromHue from './utils/get-rgb-from-hue';
 import getForegroundFromBackground from './utils/get-foreground-from-background';
 
 const elSelector = '.js-logotype';
@@ -14,12 +14,12 @@ function rainbow() {
   [].slice.call(characterEls).forEach((charEl, i) => {
     const hue = (rainbowAt + i) % 360;
     const charElCopy = charEl;
-    const bgColor = getHexFromHue(hue);
+    const bgColor = getRGBFromHue(hue);
 
     charElCopy.style.backgroundColor = bgColor;
     charElCopy.style.color = getForegroundFromBackground(bgColor);
 
-    rainbowAt++;
+    rainbowAt += 1;
   });
 }
 

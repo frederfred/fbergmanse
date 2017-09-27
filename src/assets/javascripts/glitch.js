@@ -16,7 +16,7 @@ function addSvg() {
           <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="15" in="SourceGraphic" />
         </filter>
       </defs>
-    </svg>`
+    </svg>`,
   );
   /* eslint-enable max-len */
 }
