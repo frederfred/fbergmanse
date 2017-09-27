@@ -24,7 +24,7 @@
     "pug:404": "pug --pretty --basedir src < src/404.pug > build/404.html",
     "pug:index": "pug --pretty --basedir src < src/index.pug > build/index.html",
     "serve": "npm run build && npm run server",
-    "server": "http-server ./build",
+    "server": "http-server ./build -c-1",
     "start": "npm run build && parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:html' 'npm run watch:js'",
     "test": "npm run lint",
     "watch:css": "sane 'npm run build:css'  --glob='src/**/*.scss'",
