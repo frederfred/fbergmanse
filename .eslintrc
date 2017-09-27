@@ -4,6 +4,5 @@
     "node": true,
     "browser": true
   },
-  "parser": "babel-eslint",
-  "extends": "airbnb"
+  "extends": "airbnb-base"
 }
