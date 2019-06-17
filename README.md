@@ -1,1 +1,1 @@
-[fbergman.se](http://fbergman.se)
+[fbergman.se](https://fbergman.se)
