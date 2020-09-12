@@ -50,7 +50,7 @@
     "html-minifier": "^3.5.5",
     "http-server": "^0.10.0",
     "inliner": "^1.12.5",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "postcss-cli": "^4.1.1",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
