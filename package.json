@@ -52,7 +52,7 @@
     "inliner": "^1.12.5",
     "node-sass": "^4.13.1",
     "postcss-cli": "^4.1.1",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^3.0.1",
     "pug-cli": "^1.0.0-alpha6",
     "repetitivo": "git://github.com/Oktavilla/repetitivo.git#8290dd1092450b9ab4ba34be273b8bfd4e2667a6"
   },
