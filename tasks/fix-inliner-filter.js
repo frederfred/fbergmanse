@@ -8,5 +8,9 @@ const replacement = '/#filter-glitch';
 fs.readFile(file, 'utf8', (readError, data) => {
   const result = data.replace(erroneousStringRegExp, replacement);
 
-  fs.writeFile(file, result, 'utf8');
+  fs.writeFile(file, result, (writeError) => {
+    if (writeError) {
+      console.error(writeError); // eslint-disable-line no-console
+    }
+  });
 });
