@@ -1,70 +1,15 @@
 {
   "name": "fbergmanse",
-  "version": "1.0.0",
-  "description": "Personal website",
-  "main": "index.js",
-  "scripts": {
-    "autoprefixer": "postcss --use autoprefixer -o build/assets/stylesheets/application.css build/assets/stylesheets/application.raw.css && rm build/assets/stylesheets/application.raw.css",
-    "build": "npm run build:html && npm run build:js && npm run build:css && npm run build:favicon",
-    "build:compressed": "npm run build:inliner && npm run build:html-minifier",
-    "build:css": "npm run compile:scss && npm run build:post:css",
-    "build:favicon": "rm -f build/favicon.ico && cp favicon.ico build/favicon.ico",
-    "build:html": "mkdir -p build && npm run pug:index && npm run pug:404",
-    "build:html-minifier": "npm run minify:index && npm run minify:404",
-    "build:inliner": "npm run build && npm run inliner:index && npm run inliner:404",
-    "build:js": "mkdir -p build/assets/javascripts && browserify src/assets/javascripts/application.js -t babelify --outfile build/assets/javascripts/application.js && echo 'done'",
-    "build:post:css": "npm run autoprefixer",
-    "compile:scss": "node-sass src/assets/stylesheets/application.scss build/assets/stylesheets/application.raw.css --include-path node_modules/repetitivo/lib",
-    "inliner:404": "inliner build/404.html --skip-absolute-urls > build/tmp && node tasks/fix-inliner-filter.js && mv build/tmp build/404.html",
-    "inliner:index": "inliner build/index.html --skip-absolute-urls > build/tmp && node tasks/fix-inliner-filter.js && mv build/tmp build/index.html",
-    "lint": "npm run lint:js",
-    "lint:js": "eslint src/assets/javascripts",
-    "minify:404": "html-minifier build/404.html --collapse-whitespace --minify-css --minify-js > build/tmp && mv build/tmp build/404.html",
-    "minify:index": "html-minifier build/index.html --collapse-whitespace --minify-css --minify-js > build/tmp && mv build/tmp build/index.html",
-    "pug:404": "pug --pretty --basedir src < src/404.pug > build/404.html",
-    "pug:index": "pug --pretty --basedir src < src/index.pug > build/index.html",
-    "serve": "npm run build && npm run server",
-    "server": "http-server ./build -c-1",
-    "start": "npm run build && npm-run-all --parallel 'server' 'watch:css' 'watch:html' 'watch:js'",
-    "test": "npm run lint",
-    "watch:css": "sane 'npm run build:css'  --glob='src/**/*.scss'",
-    "watch:html": "sane 'npm run build:html' --glob='src/**/*.pug'",
-    "watch:js": "sane 'npm run build:js' --glob='src/**/*.js'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/frederfred/fbergmanse.git"
-  },
-  "author": "Fred Bergman <fred@fbergman.se> (https://fbergman.se)",
-  "license": "UNLICENSED",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/frederfred/fbergmanse/issues"
-  },
-  "homepage": "https://github.com/frederfred/fbergmanse#readme",
-  "dependencies": {
-    "autoprefixer": "^10.2.5",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "core-js": "^3.11.2",
-    "element-closest": "^3.0.2",
-    "html-minifier": "^4.0.0",
-    "http-server": "^0.12.3",
-    "inliner": "^1.13.1",
-    "node-sass": "^7.0.3",
-    "postcss": "^8.2.13",
-    "postcss-cli": "^8.3.1",
-    "pug": "^3.0.2",
-    "pug-cli": "^1.0.0-alpha6",
-    "repetitivo": "git://github.com/Oktavilla/repetitivo.git#8290dd1092450b9ab4ba34be273b8bfd4e2667a6"
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
-    "eslint": "^7.25.0",
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "npm-run-all": "^4.1.5",
-    "sane": "^4.1.0"
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
   }
 }

@@ -1,5 +1,5 @@
 # Build directory
-build
+dist
 
 # Node modules
 node_modules
